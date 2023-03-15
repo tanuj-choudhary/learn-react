@@ -3,6 +3,10 @@ label {
 }
 
 input {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   margin-right: 5px;
+}
+
+.vehicle {
+  margin: 0 10px;
 }
