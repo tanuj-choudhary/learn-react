@@ -8,6 +8,18 @@ const Row = styled('div')`
   margin-bottom: 15px;
 `;
 
+const Col = styled('div')`
+  display: flex;
+  flex-direction: column;
+`;
+
+const ErrorText = styled('div')`
+  color: red;
+  font-size: 14px;
+  padding-top: 2px;
+  padding-left: 5px;
+`;
+
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -97,61 +109,75 @@ export default class App extends Component {
     return (
       <>
         <Row>
-          <TextField
-            id="outlined-basic"
-            label="First Name"
-            variant="outlined"
-            onChange={this.onInputChange}
-            name="firstName"
-            error={firstName.error.length !== 0}
-            helperText={firstName.error}
-          />
+          <Col>
+            <TextField
+              id="outlined-basic"
+              label="First Name"
+              variant="outlined"
+              onChange={this.onInputChange}
+              name="firstName"
+            />
+            {firstName.error.length !== 0 && (
+              <ErrorText>{firstName.error}</ErrorText>
+            )}
+          </Col>
 
-          <TextField
-            id="outlined-basic"
-            label="Last Name"
-            variant="outlined"
-            onChange={this.onInputChange}
-            name="lastName"
-            error={lastName.error.length !== 0}
-            helperText={lastName.error}
-          />
+          <Col>
+            <TextField
+              id="outlined-basic"
+              label="Last Name"
+              variant="outlined"
+              onChange={this.onInputChange}
+              name="lastName"
+            />
+            {lastName.error.length !== 0 && (
+              <ErrorText>{lastName.error}</ErrorText>
+            )}
+          </Col>
         </Row>
 
         <Row>
-          <TextField
-            id="outlined-basic"
-            label="User Name"
-            variant="outlined"
-            type="email"
-            onChange={this.onInputChange}
-            name="email"
-            error={email.error.length !== 0}
-            helperText={email.error}
-          />
+          <Col>
+            <TextField
+              id="outlined-basic"
+              label="User Name"
+              variant="outlined"
+              type="email"
+              onChange={this.onInputChange}
+              name="email"
+            />
+            {email.error.length !== 0 && <ErrorText>{email.error}</ErrorText>}
+          </Col>
         </Row>
 
         <Row>
-          <TextField
-            id="outlined-basic"
-            label="Password"
-            variant="outlined"
-            type="password"
-            onChange={this.onInputChange}
-            name="password"
-            error={password.error.length !== 0}
-            helperText={password.error}
-          />
-          <TextField
-            id="outlined-basic"
-            label="Confirm"
-            variant="outlined"
-            type="password"
-            onChange={this.onInputChange}
-            name="confirmPassword"
-            error={confirmPassword.error.length !== 0}
-            helperText={confirmPassword.error}
-          />
+          <Col>
+            <TextField
+              id="outlined-basic"
+              label="Password"
+              variant="outlined"
+              type="password"
+              onChange={this.onInputChange}
+              name="password"
+            />{' '}
+            {password.error.length !== 0 && (
+              <ErrorText>{password.error}</ErrorText>
+            )}
+          </Col>
+
+          <Col>
+            <TextField
+              id="outlined-basic"
+              label="Confirm"
+              variant="outlined"
+              type="password"
+              onChange={this.onInputChange}
+              name="confirmPassword"
+            />{' '}
+            {confirmPassword.error.length !== 0 && (
+              <ErrorText>{email.error}</ErrorText>
+            )}
+          </Col>
         </Row>
 
         <Row>
