@@ -1,6 +1,17 @@
-#todo-edit {
+#todo-edit-container {
+  display: flex;
+  gap: 30px;
   padding: 10px;
   width: 400px;
   justify-content: space-between;
   border: 1px solid black;
+}
+
+#save-btn {
+  cursor: pointer;
+}
+
+#todo-edit-input {
+  padding: 8px;
+  width: 100%;
 }

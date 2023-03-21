@@ -10,16 +10,18 @@ function TodoEdit({ id, text, handleEditSubmit }) {
   };
 
   return (
-    <>
+    <div id="todo-edit-container">
       <input
         onChange={handleInputChange}
-        id="todo-edit"
+        id="todo-edit-input"
         value={newText}
         type="text"
-        onBlur={() => handleEditSubmit(id, newText)}
         autoFocus
       />
-    </>
+      <button id="save-btn" onClick={() => handleEditSubmit(id, newText)}>
+        Save
+      </button>
+    </div>
   );
 }
 
