@@ -32,10 +32,7 @@ function TodoList() {
       return;
     }
 
-    setTodoList((prevTodolist) => [
-      ...prevTodolist,
-      { id: Date.now(), text: todoText, edit: false },
-    ]);
+    setTodoList([...todoList, { id: Date.now(), text: todoText, edit: false }]);
     setTodoText('');
   };
 
